@@ -1,0 +1,152 @@
+/* Basic Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: sans-serif; line-height: 1.6; color: #333; }
+header { background: #004080; color: #fff; padding: 1rem; text-align: center; }
+nav a { margin: 0 1rem; color: #fff; text-decoration: none; }
+section { padding: 2rem; }
+.timeline { list-style: none; }
+.timeline li { margin-bottom: 0.5rem; }
+#pdf-container { text-align: center; margin: 1rem 0; }
+.pdf-controls { margin-top: 0.5rem; }
+.news-week { margin-bottom: 1.5rem; border-bottom: 1px solid #ccc; padding-bottom: 1rem; }
+footer { background: #f4f4f4; text-align: center; padding: 1rem; }
+
+
+/* Carousel container */
+.news-carousel {
+    display: flex;
+    overflow-x: auto;
+    gap: 1rem;
+    padding: 1rem 0;
+  }
+
+  /* Each card */
+  .news-card {
+    flex: 0 0 300px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 1rem;
+    position: relative;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  .news-card h3 {
+    margin-bottom: 0.5rem;
+  }
+  .news-card h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Excerpt shows first few lines */
+  .news-excerpt {
+    max-height: 3em;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Full content hidden by default */
+  .news-full {
+    margin-top: 0.5rem;
+  }
+
+  /* Expand button */
+  .expand-btn {
+    background: #004080;
+    color: #fff;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Container grid: 1 column on mobile, 2 columns on ≥768px */
+.pdf-embed-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 800px) {
+  .pdf-embed-grid {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+/* Individual card styling */
+.pdf-embed {
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings inside each card */
+.pdf-embed h3 {
+  margin-bottom: 0.75rem;
+  font-size: 1.125rem;
+  color: #004080;
+  text-align: center;
+}
+
+/* Photo grid: auto‑fit as many 200px columns as will fit */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 1rem;
+  margin: 2rem 0;
+}
+
+.photo-grid figure {
+  margin: 0;
+  overflow: hidden;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  background: #fff;
+}
+
+.photo-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  transition: transform .3s;
+}
+
+.photo-grid img:hover {
+  transform: scale(1.05);
+}
+
+.photo-grid figcaption {
+  padding: 0.5rem;
+  font-size: 0.9rem;
+  color: #555;
+  text-align: center;
+}
+
+/* Lightbox overlay */
+.lightbox {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 0.5rem;
+}
+.lightbox .close-btn {
+  position: absolute;
+  top: 1rem; right: 1rem;
+  font-size: 2rem;
+  color: #fff;
+  cursor: pointer;
+}
